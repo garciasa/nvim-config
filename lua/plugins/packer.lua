@@ -71,4 +71,9 @@ return packer.startup(function()
       require('gitsigns').setup()
     end,
   }
+  -- telescope
+  use {
+  'nvim-telescope/telescope.nvim',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
 end)
