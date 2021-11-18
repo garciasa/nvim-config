@@ -15,7 +15,7 @@ local cmd = vim.cmd
 map('n', '<leader>c', ':nohl<CR>', default_opts)
 
 -- map Esc to kk
-map('i', 'kk', '<Esc>', {noremap = true})
+map('i', 'jk', '<Esc>', {noremap = true})
 
 -- don't use arrow keys
 map('', '<up>', '<nop>', { noremap = true })
