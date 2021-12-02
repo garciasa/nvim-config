@@ -1,16 +1,3 @@
---[[
-
-  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
-  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
-  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
-  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
-  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
-  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
---]]
-
------------------------------------------------------------
--- Import Lua modules
------------------------------------------------------------
 require('settings')
 require('keymaps')
 require('plugins/packer')
@@ -22,4 +9,5 @@ require('plugins/vista')
 require('plugins/nvim-cmp')
 require('plugins/nvim-lspconfig')
 require('plugins/nvim-treesitter')
+--require('plugins/nvim-lsp-installer')
 require('plugins/telescope')

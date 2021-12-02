@@ -39,11 +39,13 @@ return packer.startup(function()
 
   -- colorschemes
   use 'tanvirtin/monokai.nvim'
-
+  use 'folke/tokyonight.nvim'
   use { 'rose-pine/neovim', as = 'rose-pine' }
 
   -- LSP
   use 'neovim/nvim-lspconfig'
+  -- nvim-lsp-installer
+   use 'williamboman/nvim-lsp-installer'
 
   -- autocomplete
   use {
@@ -75,5 +77,6 @@ return packer.startup(function()
   use {
   'nvim-telescope/telescope.nvim',
   requires = { {'nvim-lua/plenary.nvim'} }
-}
+  }
+
 end)
