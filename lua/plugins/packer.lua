@@ -41,11 +41,13 @@ return packer.startup(function()
   use 'tanvirtin/monokai.nvim'
   use 'folke/tokyonight.nvim'
   use { 'rose-pine/neovim', as = 'rose-pine' }
-
+  
+  -- bufferline
+  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
   -- LSP
   use 'neovim/nvim-lspconfig'
   -- nvim-lsp-installer
-   use 'williamboman/nvim-lsp-installer'
+  use 'williamboman/nvim-lsp-installer'
 
   -- autocomplete
   use {
