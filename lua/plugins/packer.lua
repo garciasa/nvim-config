@@ -48,6 +48,8 @@ return packer.startup(function()
   use 'neovim/nvim-lspconfig'
   -- nvim-lsp-installer
   use 'williamboman/nvim-lsp-installer'
+  -- toogleterm
+  use 'akinsho/toggleterm.nvim'
 
   -- autocomplete
   use {
