@@ -56,3 +56,12 @@ map('n', '<leader>fb', ':Telescope buffers<CR>', default_opts)
 
 -- Buffers
 map('n', '<leader>bc', ':bw<CR>', default_opts) -- close buffer
+
+-- Shift line  up or down
+map('v', '<S-k>', ':m-2<CR>gv=gv', { noremap = true})
+map('v', '<S-j>', ":m '>+1<CR>gv=gv", { noremap = true})
+
+map('n', '<S-k>', '<Esc>:m-2<CR>', { noremap = true})
+map('n', '<S-j>', "<Esc>:m+1<CR>", { noremap = true})
+
+
