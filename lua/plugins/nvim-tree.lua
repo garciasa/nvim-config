@@ -14,11 +14,8 @@
 --- See: `help NvimTree`
 local g = vim.g
 
-g.nvim_tree_quit_on_open = 0
-g.nvim_tree_indent_markers = 1
 g.nvim_tree_git_hl = 1
 g.nvim_tree_highlight_opened_files = 1
-g.nvim_tree_disable_window_picker = 1
 g.nvim_tree_respect_buf_cwd = 1
 g.nvim_tree_width_allow_resize  = 1
 g.nvim_tree_show_icons = {
@@ -46,4 +43,17 @@ require('nvim-tree').setup {
     dotfiles = true,
     custom = { '.git', 'node_modules', '.cache', '.bin' },
   },
+  actions = {
+    open_file = {
+      quit_on_open = 0,
+      window_picker = {
+        enable =  1
+      }
+    }
+  },
+  renderer = {
+    indent_markers = {
+      enable = 1
+    }
+  }
 }
