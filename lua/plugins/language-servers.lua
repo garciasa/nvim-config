@@ -1,32 +1,5 @@
------------------------------------------------------------
--- Neovim LSP configuration file
------------------------------------------------------------
+local lsp_installer = require "nvim-lsp-installer"
 
--- Plugin: nvim-lspconfig
--- for language server setup see: https://github.com/neovim/nvim-lspconfig
-
-local nvim_lsp = require 'lspconfig'
-
--- Add additional capabilities supported by nvim-cmp
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.preselectSupport = true
-capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
-capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
-capabilities.textDocument.completion.completionItem.deprecatedSupport = true
-capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
-capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    'documentation',
-    'detail',
-    'additionalTextEdits',
-  },
-}
-
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -59,25 +32,26 @@ local on_attach = function(client, bufnr)
 end
 
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'tsserver', 'tailwindcss' }
+-- Include the servers you want to have installed by default below
+local servers = {
+  "tsserver",
+  "bashls",
+  "tailwindcss"
+}
 
--- Set settings for language servers below
---
--- tsserver settings
-local ts_settings = function(client)
-  client.resolved_capabilities.document_formatting = false
-  ts_settings(client)
+for _, name in pairs(servers) do
+  local server_is_found, server = lsp_installer.get_server(name)
+  if server_is_found and not server:is_installed() then
+    print("Installing " .. name)
+    server:install()
+  end
 end
 
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
+lsp_installer.on_server_ready(function(server)
+  -- Specify the default options which we'll use to setup all servers
+  local opts = {
     on_attach = on_attach,
-    capabilities = capabilities,
-    ts_settings = ts_settings,
-    flags = {
-      debounce_text_changes = 150,
-    }
   }
-end
+
+  server:setup(opts)
+end)
