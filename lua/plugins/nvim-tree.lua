@@ -14,19 +14,7 @@
 --- See: `help NvimTree`
 local g = vim.g
 
--- g.nvim_tree_git_hl = 1
--- g.nvim_tree_highlight_opened_files = 1
--- g.nvim_tree_respect_buf_cwd = 1
 g.nvim_tree_width_allow_resize  = 1
--- g.nvim_tree_show_icons = {
---  git = 1,
---  folders = 1,
---  files = 1
---}
-
---g.nvim_tree_icons = {
---	default = "‣ "
---}
 
 require('nvim-tree').setup {
   open_on_setup = true,
@@ -59,12 +47,39 @@ require('nvim-tree').setup {
     highlight_opened_files = "icon",
     highlight_git = true,
     icons = {
+      webdev_colors = true,
+      git_placement = "before",
+      padding = " ",
+      symlink_arrow = " ➛ ",
       show = {
 	      file = true,
 	      folder =  true,
+        folder_arrow = true,
         git  = true
       },
-      glyphs = {}
+      glyphs = {
+        default = "",
+        symlink = "",
+        folder = {
+          arrow_closed = "",
+          arrow_open = "",
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+          symlink_open = "",
+        },
+        git = {
+          unstaged = "✗",
+          staged = "✓",
+          unmerged = "",
+          renamed = "➜",
+          untracked = "★",
+          deleted = "",
+          ignored = "◌",
+        },
+      }
     }
   }
 }
