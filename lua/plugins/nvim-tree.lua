@@ -14,22 +14,23 @@
 --- See: `help NvimTree`
 local g = vim.g
 
-g.nvim_tree_git_hl = 1
-g.nvim_tree_highlight_opened_files = 1
-g.nvim_tree_respect_buf_cwd = 1
+-- g.nvim_tree_git_hl = 1
+-- g.nvim_tree_highlight_opened_files = 1
+-- g.nvim_tree_respect_buf_cwd = 1
 g.nvim_tree_width_allow_resize  = 1
-g.nvim_tree_show_icons = {
-  git = 1,
-  folders = 1,
-  files = 1
-}
+-- g.nvim_tree_show_icons = {
+--  git = 1,
+--  folders = 1,
+--  files = 1
+--}
 
-g.nvim_tree_icons = {
-	default = "‣ "
-}
+--g.nvim_tree_icons = {
+--	default = "‣ "
+--}
 
 require('nvim-tree').setup {
   open_on_setup = true,
+  respect_buf_cwd = true,
   view = {
     width = 32,
     auto_resize = true
@@ -45,15 +46,25 @@ require('nvim-tree').setup {
   },
   actions = {
     open_file = {
-      quit_on_open = 0,
+      quit_on_open = false,
       window_picker = {
-        enable =  1
+        enable = true
       }
     }
   },
   renderer = {
     indent_markers = {
-      enable = 1
+      enable = true
+    },
+    highlight_opened_files = "icon",
+    highlight_git = true,
+    icons = {
+      show = {
+	      file = true,
+	      folder =  true,
+        git  = true
+      },
+      glyphs = {}
     }
   }
 }
