@@ -80,4 +80,8 @@ return packer.startup(function()
   requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use {
+  'Mofiqul/vscode.nvim'
+  }
+
 end)

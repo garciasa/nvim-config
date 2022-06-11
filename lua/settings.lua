@@ -35,8 +35,13 @@ opt.relativenumber = true
 opt.ignorecase = true
 
 -- Color Scheme
-g.tokyonight_style = 'night'
-cmd [[colorscheme tokyonight]]
+--g.tokyonight_style = 'night'
+--cmd [[colorscheme tokyonight]]
+opt.background = "dark"
+g.vscode_transparent = 1
+g.vscode_italic_comment = 1
+g.vscode_disable_nvimtree_bg = true
+cmd[[colorscheme vscode]]
 
 -- highlight on yank
 exec([[
