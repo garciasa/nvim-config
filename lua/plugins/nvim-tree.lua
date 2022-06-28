@@ -20,8 +20,7 @@ require('nvim-tree').setup {
   open_on_setup = true,
   respect_buf_cwd = true,
   view = {
-    width = 32,
-    auto_resize = true
+    width = 32
   },
   git = {
     enable = true,
@@ -34,6 +33,7 @@ require('nvim-tree').setup {
   },
   actions = {
     open_file = {
+      resize_window = true,
       quit_on_open = false,
       window_picker = {
         enable = true
