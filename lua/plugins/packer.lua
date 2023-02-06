@@ -80,6 +80,8 @@ return packer.startup(function()
   requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use { "alexghergh/nvim-tmux-navigation" }
+
   use {
   'Mofiqul/vscode.nvim'
   }
