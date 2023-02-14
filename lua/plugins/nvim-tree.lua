@@ -17,7 +17,6 @@ local g = vim.g
 g.nvim_tree_width_allow_resize  = 1
 
 require('nvim-tree').setup {
-  open_on_setup = true,
   respect_buf_cwd = true,
   view = {
     width = 32
