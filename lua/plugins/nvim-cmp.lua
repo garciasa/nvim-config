@@ -54,7 +54,19 @@ cmp.setup {
       else
         fallback()
       end
-    end
+    end,
+    ["<C-J>"] = cmp.mapping(function(fallback)
+			cmp.mapping.abort()
+			local copilot_keys = vim.fn["copilot#Accept"]()
+			if copilot_keys ~= "" then
+				vim.api.nvim_feedkeys(copilot_keys, "i", true)
+			else
+				fallback()
+			end
+		end, {
+			"i",
+			"s",
+		})
   },
 
   -- load sources, see: https://github.com/topics/nvim-cmp
