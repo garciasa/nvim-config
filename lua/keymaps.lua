@@ -25,7 +25,6 @@ map('', '<right>', '<nop>', { noremap = true })
 
 -- fast saving with <leader> and s
 map('n', '<leader>s', ':w<CR>', default_opts)
--- map('i', '<leader>s', '<C-c>:w<CR>', default_opts)
 
 -- move around splits using Ctrl + {h,j,k,l}
 map('n', '<C-h>', '<C-w>h', default_opts)
@@ -58,10 +57,14 @@ map('n', '<leader>fb', ':Telescope buffers<CR>', default_opts)
 map('n', '<leader>bc', ':bw<CR>', default_opts) -- close buffer
 
 -- Shift line  up or down
-map('v', '<S-k>', ':m-2<CR>gv=gv', { noremap = true})
-map('v', '<S-j>', ":m '>+1<CR>gv=gv", { noremap = true})
+-- map('v', '<S-k>', ':m-2<CR>gv=gv', { noremap = true})
+-- map('v', '<S-j>', ":m '>+1<CR>gv=gv", { noremap = true})
 
-map('n', '<S-k>', '<Esc>:m-2<CR>', { noremap = true})
-map('n', '<S-j>', "<Esc>:m+1<CR>", { noremap = true})
+-- map('n', '<S-k>', '<Esc>:m-2<CR>', { noremap = true})
+-- map('n', '<S-j>', "<Esc>:m+1<CR>", { noremap = true})
+--
+-- TAB S-TAB to move between buffers
+map('n', '<TAB>', ':bnext<CR>', { noremap = true })
+map('n', '<S-TAB>', ':bprev<CR>', { noremap = true })
 
 
