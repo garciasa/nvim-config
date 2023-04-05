@@ -1,6 +1,3 @@
-local cmd = vim.cmd     				-- execute Vim commands
-local exec = vim.api.nvim_exec 	-- execute Vimscript
-local fn = vim.fn       				-- call Vim functions
 local g = vim.g         				-- global variables
 local opt = vim.opt         		-- global/buffer/windows-scoped options
 
@@ -34,29 +31,6 @@ opt.smartindent = true          -- autoindent new lines
 opt.relativenumber = true
 opt.ignorecase = true
 
--- Color Scheme
---g.tokyonight_style = 'night'
---cmd [[colorscheme tokyonight]]
-opt.background = "dark"
-g.vscode_transparent = 1
-g.vscode_italic_comment = 1
-g.vscode_disable_nvimtree_bg = true
-cmd[[colorscheme vscode]]
-
--- highlight on yank
-exec([[
-  augroup YankHighlight
-    autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
-  augroup end
-]], false)
--- open a terminal pane on the right using :Term
-cmd [[command Term :botright vsplit term://$SHELL]]
-cmd [[
-    autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
-    autocmd TermOpen * startinsert
-    autocmd BufLeave term://* stopinsert
-]]
 
 -- disable builtins plugins
 local disabled_built_ins = {

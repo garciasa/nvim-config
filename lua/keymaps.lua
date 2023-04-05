@@ -56,6 +56,8 @@ map('n', '<leader>fb', ':Telescope buffers<CR>', default_opts)
 
 -- Buffers
 map('n', '<leader>bc', ':bw<CR>', default_opts) -- close buffer
+map('n', '<TAB>', ':tabnext<CR>', default_opts) 
+map('n', '<S-TAB>', ':tabprevious<CR>', default_opts) 
 
 -- Shift line  up or down
 map('v', '<S-k>', ':m-2<CR>gv=gv', { noremap = true})
