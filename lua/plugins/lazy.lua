@@ -14,8 +14,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 
+  -- icons
+  'nvim-tree/nvim-web-devicons',
+  
   -- file explorer
-  'kyazdani42/nvim-tree.lua',
+  {'nvim-tree/nvim-tree.lua', dependencies = "nvim-tree/nvim-web-devicons" },
 
   -- indent line
   'lukas-reineke/indent-blankline.nvim',
@@ -23,8 +26,6 @@ require('lazy').setup({
   -- autopair
   'windwp/nvim-autopairs',
 
-  -- icons
-  'kyazdani42/nvim-web-devicons',
 
   -- tagviewer
   'liuchengxu/vista.vim',
@@ -37,7 +38,7 @@ require('lazy').setup({
   'folke/tokyonight.nvim',
   
   -- bufferline
-  {'akinsho/bufferline.nvim', dependencies = 'kyazdani42/nvim-web-devicons'},
+  {'akinsho/bufferline.nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
   
   -- LSP
   'neovim/nvim-lspconfig',
@@ -60,7 +61,7 @@ require('lazy').setup({
   -- statusline
   {
     'famiu/feline.nvim',
-    dependencies = { 'kyazdani42/nvim-web-devicons' },
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
 
   -- git labels
