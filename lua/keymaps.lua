@@ -39,7 +39,7 @@ map('n', '<leader>q', ':qa!<CR>', default_opts)
 -- Applications & Plugins shortcuts:
 -----------------------------------------------------------
 -- open terminal
-map('n', '<C-t>', ':Term<CR>', { noremap = true })
+map('n', '<leader>t', ':Term<CR>', { noremap = true })
 
 -- nvim-tree
 map('n', '<leader>o', ':NvimTreeToggle<CR>', default_opts)       -- open/close
@@ -64,9 +64,13 @@ map('n', '<S-TAB>', ':tabprevious<CR>', default_opts)
 
 -- map('n', '<S-k>', '<Esc>:m-2<CR>', { noremap = true})
 -- map('n', '<S-j>', "<Esc>:m+1<CR>", { noremap = true})
---
+
+-- Move quicker between lines
+map('n', '<S-j>', '5j', { noremap = true})
+map('n', '<S-k>', '5k', { noremap = true})
 -- TAB S-TAB to move between buffers
 map('n', '<TAB>', ':bnext<CR>', { noremap = true })
 map('n', '<S-TAB>', ':bprev<CR>', { noremap = true })
 
-
+-- COPILOT
+map('i', '<S-/>', 'comple#Accept', { noremap = true, silent = true, expr = true})
