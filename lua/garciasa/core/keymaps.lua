@@ -55,6 +55,7 @@ map("n", "<leader>gc", ":Telescope git_commits<cr>", { desc = "Show git commits"
 map("n", "<leader>gfc", ":Telescope git_bcommits<cr>", { desc = "Show git commits for current buffer" }) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
 map("n", "<leader>gb", ":Telescope git_branches<cr>", { desc = "Show git branches" }) -- list git branches (use <cr> to checkout) ["gb" for git branch]
 map("n", "<leader>gs", ":Telescope git_status<cr>", { desc = "Show current git changes per file" }) -- list current changes per file with diff preview ["gs" for git status]
+
 -- Buffers
 map("n", "<leader>bc", ":bw<CR>", default_opts) -- close buffer
 map("n", "<TAB>", ":bnext<CR>", { noremap = true })
